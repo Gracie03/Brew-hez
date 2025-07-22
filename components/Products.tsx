@@ -59,7 +59,8 @@ function Products() {
                     icon: "success"
                 });
                 resetForm();
-                setIsLoading(false)
+                setIsLoading(false);
+                setIsOpen(false);
             } else {
                 Swal.fire({
                     title: "Failed",
@@ -75,7 +76,6 @@ function Products() {
                 icon: "error"
             });
             console.log(error);
-
             setIsLoading(false)
         }
     };

@@ -1,8 +1,6 @@
-
-
 import mongoose, { Mongoose } from "mongoose";
 
-const MONGO_URI: string | undefined = process.env.LOCAL_MONGODB_URI;
+const MONGO_URI: string = process.env.LOCAL_MONGODB_URI || "";
 
 if (!MONGO_URI) {
   throw new Error("Please define the LOCAL_MONGODB_URI environment variable");
@@ -32,7 +30,7 @@ async function connectDB(): Promise<Mongoose> {
     globalWithMongoose.mongoose.conn = await globalWithMongoose.mongoose
       .promise;
   } catch (error) {
-    globalWithMongoose.mongoose.promise = null; // reset on failure
+    globalWithMongoose.mongoose.promise = null;
     throw error;
   }
 

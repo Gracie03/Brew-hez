@@ -1,4 +1,4 @@
-// models/Order.ts
+
 import mongoose, { Schema, Document, Model } from "mongoose";
 
 export interface Order extends Document {
