@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       { message: "Order placed successfully", newOrder },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("POST /api/order error:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }

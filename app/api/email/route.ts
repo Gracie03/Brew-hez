@@ -21,8 +21,12 @@ export async function POST(req: Request) {
       { message: "Email sent", newEmail },
       { status: 201 }
     );
-  } catch (error: any) {
-    console.error("POST /api/email error:", error.message, error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("POST /api/email error:", error.message, error);
+    } else {
+      console.error("POST /api/email unknown error:", error);
+    }
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

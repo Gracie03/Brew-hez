@@ -1,25 +1,42 @@
 
 
+import mongoose, { Mongoose } from "mongoose";
 
-import mongoose from "mongoose";
-
-const MONGO_URI = process.env.LOCAL_MONGODB_URI as string;
+const MONGO_URI: string | undefined = process.env.LOCAL_MONGODB_URI;
 
 if (!MONGO_URI) {
   throw new Error("Please define the LOCAL_MONGODB_URI environment variable");
 }
 
-let cached = (global as any).mongoose || { conn: null, promise: null };
+interface MongooseGlobal extends Global {
+  mongoose: {
+    conn: Mongoose | null;
+    promise: Promise<Mongoose> | null;
+  };
+}
 
-async function connectDB() {
-  if (cached.conn) return cached.conn;
+const globalWithMongoose = globalThis as unknown as MongooseGlobal;
 
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGO_URI);
-    cached.conn = await cached.promise;
+if (!globalWithMongoose.mongoose) {
+  globalWithMongoose.mongoose = { conn: null, promise: null };
+}
+
+async function connectDB(): Promise<Mongoose> {
+  if (globalWithMongoose.mongoose.conn) return globalWithMongoose.mongoose.conn;
+
+  if (!globalWithMongoose.mongoose.promise) {
+    globalWithMongoose.mongoose.promise = mongoose.connect(MONGO_URI);
   }
 
-  return cached.conn;
+  try {
+    globalWithMongoose.mongoose.conn = await globalWithMongoose.mongoose
+      .promise;
+  } catch (error) {
+    globalWithMongoose.mongoose.promise = null; // reset on failure
+    throw error;
+  }
+
+  return globalWithMongoose.mongoose.conn;
 }
 
 export default connectDB;

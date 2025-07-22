@@ -74,6 +74,8 @@ function Products() {
                 text: "Order was not created",
                 icon: "error"
             });
+            console.log(error);
+
             setIsLoading(false)
         }
     };

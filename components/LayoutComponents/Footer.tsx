@@ -4,6 +4,7 @@ import Link from "next/link";
 import CustomButton from "../CustomComponents/CustomButton";
 import { navLinks, socials } from "../Links/links";
 
+
 {/* the website main footer*/ }
 const Footer = () => {
 

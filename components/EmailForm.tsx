@@ -52,6 +52,8 @@ function EmailForm() {
                 text: "Message was not sent",
                 icon: "error"
             });
+            console.log(error);
+
         } finally {
             setIsLoading(false);
         }
