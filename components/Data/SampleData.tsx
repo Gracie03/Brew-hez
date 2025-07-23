@@ -2,81 +2,74 @@ import img1 from '@/image/disc1.jpg';
 import img2 from '@/image/disc2.jpg';
 import img3 from '@/image/disc3.jpg';
 
-
-{/* a sample data for top selling coffee */ }
+{/* Top selling coffee */ }
 export const bestSellers = [
     {
-        name: 'Expresso',
+        name: 'Espresso',
         img: img1,
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
-
+        desc: 'Our classic Espresso — bold, rich, and perfect for a quick energy boost any time of the day.',
     },
     {
         name: 'Cappuccino',
         img: img2,
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
-
+        desc: 'A customer favorite! Creamy steamed milk topped with a generous layer of frothy foam over a strong espresso base.',
     },
     {
-        name: 'Double espresso',
+        name: 'Double Espresso',
         img: img3,
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
-
+        desc: 'Twice the shot, twice the flavor. Perfect for coffee lovers who like it strong and intense.',
     },
-]
+];
 
-
-{/* a sample data for customers review */ }
+{/* Customer testimonials */ }
 export const customersTestimonial = [
     {
         name: 'Jane D.',
-        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
+        comment: 'The cappuccino here is simply the best I’ve had. Always fresh, smooth, and perfectly balanced!',
     },
     {
         name: 'Tim G.',
-        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
+        comment: 'Great atmosphere, friendly baristas, and the espresso shots are consistently strong and flavorful.',
     },
     {
         name: 'Lana R.',
-        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
+        comment: 'I love starting my mornings with their cold brew. It’s smooth, refreshing, and never too bitter.',
     },
     {
         name: 'Anny B.',
-        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
+        comment: 'Their mocha is my guilty pleasure! Just the right blend of chocolate and coffee.',
     },
     {
         name: 'Jayce T.',
-        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
+        comment: 'Always a pleasant experience here. The flat white is smooth and hits the spot every time.',
     },
     {
         name: 'Anthony C.',
-        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
+        comment: 'The quality of the coffee is outstanding. You can tell they care about every cup they serve.',
     },
-]
+];
 
-
-{/* a smple data for blog*/ }
+{/* Blog entries */ }
 export const sampleBlog = [
     {
-        title: 'Coffee land',
+        title: 'Coffee Land: A Journey Through Beans & Brews',
         img: img3,
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias,Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias'
+        desc: `Coffee isn’t just a beverage — it’s a global culture, an art form, and for many, a daily ritual. In this blog, we take you on a flavorful journey through the origins of coffee, from ancient Ethiopia to the bustling cafés of modern cities. Discover how brewing methods, bean origins, and roast profiles influence the final cup. Whether you're a coffee connoisseur or just discovering your love for it, there's something in this rich history for everyone.`,
     },
     {
-        title: 'Coffee beans',
+        title: 'Understanding Coffee Beans: Arabica vs Robusta',
         img: img1,
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias,Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
+        desc: `When it comes to coffee beans, most people only know what tastes good to them. But did you know that the two most common types — Arabica and Robusta — offer vastly different experiences? Arabica is known for its smooth, complex flavors and lower caffeine content, while Robusta is bold, more bitter, and higher in caffeine. This post explores the key differences, how they're grown, and how each variety contributes to the flavor of your favorite drinks.`,
     },
     {
-        title: 'Coffee tips',
+        title: 'Top 5 Coffee Tips for Home Brewers',
         img: img3,
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias,Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis atque cum facere fugit, repudiandae sit doloremque nesciunt molestias',
-
+        desc: `Brewing the perfect cup at home doesn’t have to be intimidating. With the right tips, anyone can become their own barista. In this guide, we’ll show you how to choose the right grind size for your brew method, the ideal water temperature for extraction, and why freshness matters when it comes to beans. We also dive into the importance of ratios and offer pro tips on enhancing flavor. Whether you’re using a French press, pour-over, or espresso machine, these tips will level up your morning ritual.`,
     },
-]
+];
 
 
-{/* a smple data for all the coffeee*/ }
+{/* Coffee menu */ }
 export const coffeeSamples = [
     {
         name: "Espresso",

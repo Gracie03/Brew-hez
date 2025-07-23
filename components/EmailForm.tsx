@@ -13,16 +13,11 @@ interface EmailProps {
     message: string;
 }
 
-
-//a seperate component for contact mail form
-
 function EmailForm() {
-
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const Handledb = async (values: EmailProps, resetForm: () => void) => {
         setIsLoading(true);
-
         try {
             const res = await fetch('/api/email', {
                 method: 'POST',
@@ -53,14 +48,13 @@ function EmailForm() {
                 icon: "error"
             });
             console.log(error);
-
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <div className="">
+        <div className="w-full flex items-center justify-center">
             <Formik
                 initialValues={{ name: "", email: "", message: "" }}
                 validationSchema={EmailFormSchema}
@@ -97,7 +91,7 @@ function EmailForm() {
                                     title="Send message"
                                     type="submit"
                                     handleClick={() => { }}
-                                    className="w-[400px] !h-[50px]"
+                                    className="!w-full sm:w-[300px] !h-[50px]"
                                     disabled={isLoading}
                                 />
                             </div>

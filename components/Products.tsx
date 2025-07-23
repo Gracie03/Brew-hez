@@ -104,18 +104,23 @@ function Products() {
             }
             {
                 isOpen &&
-                <CustomModal visibility={isOpen} toggle={() => setIsOpen(false)} >
-                    <div className="w-[500px] !h-[800px] flex flex-col bg-white rounded-md items-center">
-                        <div className="mt-10">
-                            <p className='text-[22px] font-semibold text-custom mb-1'>Order details</p>
-                            <hr />
-                        </div>
-                        <div className="mb-10 mt-2 flex flex-col items-center">
-                            <p className='text-[16] font-semibold text-custom'> Coffee type: <span className='text-primary text-[20px]'>{order?.name}</span></p>
-                            <p className='text-[16] font-semibold text-custom'> Coffee Cost: <span className='text-primary text-[20px]'>{order?.cost}</span></p>
+                <CustomModal visibility={isOpen} toggle={() => setIsOpen(false)}>
+                    <div className="w-[95vw] max-w-[500px] h-auto max-h-[90vh] overflow-y-auto flex flex-col bg-white rounded-md items-center p-4 sm:p-6">
+                        <div className="mt-4 sm:mt-6 text-center w-full">
+                            <p className='text-[20px] sm:text-[22px] font-semibold text-custom mb-2'>Order details</p>
+                            <hr className="border-gray-300" />
                         </div>
 
-                        <div className="">
+                        <div className="mb-8 mt-4 flex flex-col items-center text-center">
+                            <p className='text-[15px] sm:text-[16px] font-semibold text-custom'>
+                                Coffee type: <span className='text-primary text-[18px] sm:text-[20px]'>{order?.name}</span>
+                            </p>
+                            <p className='text-[15px] sm:text-[16px] font-semibold text-custom mt-2'>
+                                Coffee Cost: <span className='text-primary text-[18px] sm:text-[20px]'>{order?.cost}</span>
+                            </p>
+                        </div>
+
+                        <div className="w-full">
                             <Formik
                                 initialValues={{ name: "", phone: "", address: "" }}
                                 validationSchema={OrderFormSchema}
@@ -124,65 +129,53 @@ function Products() {
                                 }}
                             >
                                 {() => (
-                                    <Form
-                                        className=""
-                                    >
+                                    <Form className="w-full">
                                         <div className="grid grid-cols-1 gap-5">
-                                            <div className="">
-                                                <CustomInput
-                                                    label='Name'
-                                                    id='name'
-                                                    name='name'
-                                                    placeholder='Enter your name'
-                                                    type='text'
+                                            <CustomInput
+                                                label='Name'
+                                                id='name'
+                                                name='name'
+                                                placeholder='Enter your name'
+                                                type='text'
+                                            />
+                                            <CustomInput
+                                                label='Phone'
+                                                id='phone'
+                                                name='phone'
+                                                placeholder='Enter your phone'
+                                                type='number'
+                                            />
+                                            <CustomInput
+                                                label='Address'
+                                                id='address'
+                                                name='address'
+                                                placeholder='Type an address'
+                                                type='text'
+                                            />
+                                            <div className="w-full flex flex-col sm:flex-row justify-between gap-3 mt-5">
+                                                <CustomButton
+                                                    title="Confirm order"
+                                                    type='submit'
+                                                    handleClick={() => { }}
+                                                    className="!bg-primary !text-accent !border-none w-full sm:w-[200px] h-[45px] sm:h-[50px]"
+                                                    disabled={isLoading}
                                                 />
-                                            </div>
-                                            <div className="">
-                                                <CustomInput
-                                                    label='Phone'
-                                                    id='phone'
-                                                    name='phone'
-                                                    placeholder='Enter your phone'
-                                                    type='number'
+                                                <CustomButton
+                                                    title="Cancel"
+                                                    handleClick={() => { setIsOpen(false); }}
+                                                    className="!bg-custom !text-accent !border-none w-full sm:w-[150px] h-[45px] sm:h-[50px]"
+                                                    disabled={isLoading}
                                                 />
-                                            </div>
-                                            <div className="">
-                                                <CustomInput
-                                                    label='Address'
-                                                    id='address'
-                                                    name='address'
-                                                    placeholder='type a address'
-                                                    type='text'
-                                                />
-                                            </div>
-                                            <div className="w-full flex justify-between mt-5">
-                                                <div className="">
-                                                    <CustomButton
-                                                        title="Confirm order"
-                                                        type='submit'
-                                                        handleClick={() => { }}
-                                                        className="!bg-primary !text-accent !border-none !w-[200px] !h-[50px]"
-                                                        disabled={isLoading}
-                                                    />
-                                                </div>
-                                                <div className="">
-                                                    <CustomButton
-                                                        title="Cancel"
-                                                        handleClick={() => { setIsOpen(false); }}
-                                                        className="!bg-custom !text-accent !border-none !w-[150px] !h-[50px]"
-                                                        disabled={isLoading}
-                                                    />
-                                                </div>
                                             </div>
                                         </div>
                                     </Form>
                                 )}
                             </Formik>
                         </div>
-
                     </div>
                 </CustomModal>
             }
+
 
         </div >
     )

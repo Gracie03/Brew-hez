@@ -5,19 +5,20 @@ interface HeaderProps {
     intro: string;
 }
 
-
-{/* thecustom header for all the pages*/ }
+// Custom header for all pages
 function Header({ title, intro }: HeaderProps) {
     return (
-        <div className="">
-            <div className="flex items-center gap-20 py-5 bg-custom px-10 justify-center h-[200px]">
-                <div className=" text-accent flex flex-col items-center gap-2">
-                    <p className="font-semibold text-[48px]">{title} <span className='text-primary font-bold'>BrewHez</span></p>
-                    <p className='italic'>{intro}</p>
+        <div>
+            <div className="flex items-center justify-center bg-custom px-2 sm:px-10 py-6 sm:py-14 text-center">
+                <div className="text-accent flex flex-col items-center gap-3 max-w-3xl">
+                    <p className="font-semibold text-2xl sm:text-4xl md:text-5xl leading-tight">
+                        {title} <span className="text-primary font-bold">BrewHez</span>
+                    </p>
+                    <p className="italic text-sm sm:text-lg">{intro}</p>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Header
+export default Header;

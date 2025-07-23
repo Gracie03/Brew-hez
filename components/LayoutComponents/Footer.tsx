@@ -1,61 +1,48 @@
-'use client'
+'use client';
 
 import Link from "next/link";
-import CustomButton from "../CustomComponents/CustomButton";
 import { navLinks, socials } from "../Links/links";
 
 
-{/* the website main footer*/ }
+// page custom footer
 const Footer = () => {
+
 
     return (
         <section>
-            <div className="grid grid-cols-1 gap-4 py-5 h-[200px] bg-custom text-accent px-5 rounded-t">
-                <div className="flex items-center justify-between ">
-                    <ul className="flex gap-10">
-                        {
-                            navLinks.map(({ page, link }, index) => (
-                                <li
-                                    key={index}
-                                    className="text-[1rem] font-semibold"
-                                >
-                                    <Link href={link}>{page}</Link>
-                                </li>
-                            ))
-                        }
+            <div className="grid grid-cols-1 gap-4 py-6 bg-custom text-accent px-4 sm:px-6 rounded-t">
+                {/* Top Section: Nav + Button */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    {/* Nav Links */}
+                    <ul className="flex flex-wrap justify-center md:justify-start gap-6">
+                        {navLinks.map(({ page, link }, index) => (
+                            <li key={index} className="text-[1rem] font-semibold">
+                                <Link href={link}>{page}</Link>
+                            </li>
+                        ))}
                     </ul>
-                    <div className="">
-                        <CustomButton
-                            title="Order now"
-                            handleClick={() => { }}
-                            className="hover:!text-accent hover:!border-accent "
-                        />
-                    </div>
+
                 </div>
-                <div className="">
-                    <hr className="" />
-                </div>
-                <div className=" flex justify-between items-center">
-                    <p className="text-[0.9rem]">&copy; 2025 BrewHez. All rights reserved.</p>
-                    <div className="">
-                        <div className="flex items-center gap-10">
-                            {
-                                socials.map(({ icon, }, index) => (
-                                    <div
-                                        key={index}
-                                        className="cursor-pointer"
-                                    >
-                                        <span className="text-white">{icon}</span>
-                                    </div>
-                                ))
-                            }
-                        </div>
+
+                <hr className="border-accent/40 my-2" />
+
+                {/* Bottom Section: Copyright + Socials */}
+                <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4">
+                    <p className="text-[0.875rem] text-center md:text-left">
+                        &copy; 2025 BrewHez. All rights reserved.
+                    </p>
+
+                    <div className="flex items-center gap-6">
+                        {socials.map(({ icon }, index) => (
+                            <div key={index} className="cursor-pointer text-white text-lg">
+                                {icon}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
-
+    );
+};
 
 export default Footer;

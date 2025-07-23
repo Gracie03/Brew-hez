@@ -4,67 +4,60 @@ import Header from '@/components/LayoutComponents/Header'
 import { info, socials } from '@/components/Links/links'
 import EmailForm from '@/components/EmailForm'
 
-
-function page() {
-
+function ContactPage() {
     return (
-        <section className="">
+        <section>
             <Header
-                title='Contact'
-                intro='Fell free to get in touch with us at anytime .'
+                title="Contact"
+                intro="Feel free to get in touch with us at anytime."
             />
-            <div className="h-[80vh] mt-20">
 
-                <div className=" flex justify-between px-20">
+            <div className="mt-10 px-4 sm:px-6 lg:px-20 lg:h-[90vh]">
+                <div className="flex flex-col lg:flex-row gap-10">
+                    {/* Contact Info Section */}
+                    <div className="flex-1 ">
+                        <p className="text-xl font-semibold text-primary mb-6">
+                            Get in touch with us
+                        </p>
 
-                    <div className="grid grid-cols-1 ">
-                        <div className="">
-                            <p className='text-[20px] font-semibold text-primary'> Get in touch with us</p>
-                        </div>
-                        {
-                            info.map(({ icon, title, details }, index) => (
+                        {info.map(({ icon, title, details }, index) => (
+                            <div
+                                key={index}
+                                className="flex items-start gap-4 mb-5"
+                            >
+                                <div>{icon}</div>
+                                <div className="flex flex-col gap-1">
+                                    <p className="text-primary text-sm sm:text-base">{title}</p>
+                                    <p className="font-semibold text-custom text-base sm:text-lg">{details}</p>
+                                </div>
+                            </div>
+                        ))}
+
+                        <hr className="my-6 border-gray-300" />
+
+                        <div className="flex items-center gap-6">
+                            {socials.map(({ icon }, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-center gap-5 mb-5"
+                                    className="cursor-pointer text-custom text-xl"
                                 >
-                                    <div className="">
-                                        <span>{icon}</span>
-                                    </div>
-                                    <div className="flex flex-col gap-1 ">
-                                        <p className='text-primary text-[16px]'>{title}</p>
-                                        <p className='font-semibold text-custom text-[18px] '>{details}</p>
-                                    </div>
+                                    {icon}
                                 </div>
-                            ))
-                        }
-                        <div className="">
-                            <hr />
-                            <div className="flex items-center mt-10 gap-10">
-                                {
-                                    socials.map(({ icon, }, index) => (
-                                        <div
-                                            key={index}
-                                            className="cursor-pointer"
-                                        >
-                                            <span className="text-custom">{icon}</span>
-                                        </div>
-                                    ))
-                                }
-                            </div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* imported a custom from the component folder */}
-                    <div className="flex flex-col items-center border-[2px] px-10 py-10 border-custom rounded-md">
-                        <p className='mb-10 text-primary font-semibold text-[18px]'>Send Us a Message</p>
+                    {/* Email Form Section */}
+                    <div className="flex-1 border-2 border-custom rounded-md px-4 sm:px-6 py-8 ">
+                        <p className="mb-6 text-primary font-semibold text-lg text-center">
+                            Send Us a Message
+                        </p>
                         <EmailForm />
                     </div>
-
                 </div>
-
             </div>
         </section>
-    )
+    );
 }
 
-export default page
+export default ContactPage;

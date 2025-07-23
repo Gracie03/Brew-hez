@@ -31,7 +31,7 @@ const CustomInput = ({
             >{label}</label>
             <input
                 type={type}
-                className={`${inputClassName}  ${meta.touched && meta.error ? "!border !border-red-600" : "focus:border-b-secondary"}  border-b-[1px] border-custom w-[400px] py-2 px-3 focus:outline-0 `}
+                className={`${inputClassName}  ${meta.touched && meta.error ? "!border !border-red-600" : "focus:border-b-secondary"}  border-b-[1px] border-custom w-full md:w-[400px] py-2 px-3 focus:outline-0  `}
                 id={id}
                 placeholder={placeholder}
                 disabled={disabled}

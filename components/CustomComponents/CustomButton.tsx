@@ -22,13 +22,14 @@ const CustomButton = ({
 }: ButtonProps) => {
     return (
         <motion.button
-            className={`${className} p-2 border-2 border-primary bg-primary text-accent rounded-md w-[200px] hover:bg-transparent hover:text-primary hover:border-primary h-[45px] text-[18px] font-semibold`}
+            className={`p-2 border-2 border-primary bg-primary text-accent rounded-md min-h-[45px] w-full sm:w-[200px] text-base sm:text-lg font-semibold hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300 ${className}`}
             onClick={handleClick}
             disabled={disabled}
             type={type}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
         >
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-2">
                 <span>{title}</span>
                 {Icon && <span>{Icon}</span>}
             </div>
